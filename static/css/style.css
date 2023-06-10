@@ -1,0 +1,70 @@
+body, html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    line-height: normal;
+    text-decoration-thickness: from-font;
+}
+
+.step-item {
+    border: 1px solid darkseagreen;
+    border-radius: 6px;
+    margin: 1vh;
+    display: inline-block;
+}
+
+.step-item:hover {
+    background: lightgray
+}
+
+.step-item img {
+    width: 100%;
+}
+
+.primer_rascheta {
+    width: 86%;
+    margin-left: 9.5%;
+    border-radius: 10px;
+}
+
+.primer_rascheta tr {
+    border: 0.5px solid lightsteelblue;
+
+}
+
+#primer_text {
+    text-align: center;
+    background: burlywood;
+    font-size: 100%;
+    font-weight: 600;
+}
+
+#primer_cena {
+    text-align: center;
+    font-size: 100%;
+    font-weight: 600;
+}
+.back{
+    text-align: center;
+}
+#back{
+    margin-top: 20vh;
+    width: 60%;
+    height: 10vh;
+    margin-left: 20%;
+    border: 0.5px solid burlywood;
+    border-radius: 6px;
+    background: burlywood;
+
+}
+.progress{
+    text-align: center;
+    flex-wrap: wrap;
+    height: 10vh;
+
+}
+.progress li{
+    color: red;
+    width: 20vh;
+}

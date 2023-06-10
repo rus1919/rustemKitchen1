@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/static/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+<div class="container">
+    {%if step==1%}
+    <div class="mx-auto" style="text-align: center"><h2>Выберите форму кухни</h2>
+        <form method="post">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="step-item col-5">
+                    <input type="radio" name="step1" value="uglovaya_levaya" onclick="submit()">
+
+                    <span class="kwiz-block__step-item-image">
+										<img src="/static/img/calc/shag1/uglovaya_levaya.webp" alt="">
+
+									<span class="kwiz-block__step-item-name">
+										Угловая (левая)
+									</span>
+								</span>
+                </div>
+                <div class="step-item col-5">
+                    <input type="radio" name="step1" value="uglovaya_pravaya" onclick="submit()">
+
+                    <span class="kwiz-block__step-item-image">
+										<img src="/static/img/calc/shag1/uglovaya_pravaya.webp" alt="">
+
+									<span class="kwiz-block__step-item-name">
+										Угловая (правая)
+									</span>
+								</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="step-item col-5">
+                    <input type="radio" name="step1" value="p_obraznaya" onclick="submit()">
+
+                    <span class="kwiz-block__step-item-image">
+										<img src="/static/img/calc/shag1/p_obraznaya.webp" alt="">
+
+									<span class="kwiz-block__step-item-name">
+										П-Образная
+									</span>
+								</span>
+                </div>
+                <div class="step-item col-5">
+                    <input type="radio" name="step1" value="premaya" onclick="submit()">
+
+                    <span class="kwiz-block__step-item-image">
+										<img src="/static/img/calc/shag1/premaya.webp" alt="">
+
+									<span class="kwiz-block__step-item-name">
+										Прямая
+									</span>
+								</span>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <table style="font-size:80%" class="primer_rascheta">
+            <tr>
+                <td colspan="2" id="primer_text">Пример расчета</td>
+            </tr>
+            <tr>
+                <td class="col1">Форма кухни</td>
+                <td class="col2">Угловая (левая)</td>
+            </tr>
+            <tr>
+                <td class="col1">L1</td>
+                <td class="col2">300 см</td>
+            </tr>
+            <tr>
+                <td class="col1">L2</td>
+                <td class="col2">200 см</td>
+            </tr>
+            <tr>
+                <td class="col1">Распол. холодильника</td>
+                <td class="col2">Стоит отдельно</td>
+            </tr>
+            <tr>
+                <td class="col1">Планировка</td>
+                <td class="col2">Шкафы по L1 и L2</td>
+            </tr>
+            <tr>
+                <td class="col1">Вид шкафов</td>
+                <td class="col2">Стандартные</td>
+            </tr>
+            <tr>
+                <td class="col1">Нижние шкафы</td>
+                <td class="col2">Эконом</td>
+            </tr>
+            <tr>
+                <td class="col1">Фасад</td>
+                <td class="col2">МДФ в пленке ПВХ</td>
+            </tr>
+            <tr>
+                <td class="col1">Столешница</td>
+                <td class="col2">Эконом</td>
+            </tr>
+            <tr>
+                <td class="col1">Фартук</td>
+                <td class="col2">
+                    ДСП в пластике
+                </td>
+            </tr>
+            <tr>
+                <td class="col1">Холодильник</td>
+                <td class="col2">Обычный</td>
+            </tr>
+            <tr>
+                <td class="col1">Духовка</td>
+                <td class="col2">Под варочной панелью</td>
+            </tr>
+
+            <tr>
+                <td class="col1">Вытяжка</td>
+                <td class="col2">Встроенная</td>
+            </tr>
+            <tr>
+                <td colspan="2" id="primer_cena">83 000 - 103 000 руб.</td>
+            </tr>
+        </table>
+    </div>
+    {%endif%}
+    {%if step==2%}
+    {%if type_kitchen=='uglovaya_levaya'%}
+
+    <div class="row">
+        <ul class="progress">
+
+            <li class="active" data-count="1"><span>Техника</span></li>
+            <li data-count="2"><span>Планировка</span></li>
+            <li data-count="3"><span>Вид шкафов</span></li>
+            <li data-count="4"><span>Столешница</span></li>
+            <li data-count="5"><span>Фартук</span></li>
+
+            <li data-count="6"><span>Дизайн</span></li>
+
+            <li data-count="7"><span>Наполнение</span></li>
+
+            <li data-count="8"><span>Этап</span></li>
+
+
+            <li data-count="9"><span>Размер</span></li>
+        </ul>
+    </div>
+    <div class="row">
+        <h2>Выберите технику для кухни</h2>
+        <img src="/static/img/calc/shag2/tecnik-first.webp">
+    </div>
+    {%endif%}
+    <div class="row back">
+    <button id='back' onclick="window.history.go(-1); return false;">Назад</button>
+    </div>
+    {%endif%}
+</div>
+</body>
+</html>

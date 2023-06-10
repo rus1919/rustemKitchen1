@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Huindai Bayon",
+    "price": 100,
+    "imgLink": "/static/img/webapps/arenda_avto/huindai_bayon.png"
+  },
+  {
+    "name": "Huindai Kona",
+    "price": 300,
+    "imgLink": "/static/img/webapps/arenda_avto/huindai_kona.png"
+  },
+  {
+    "name": "Seat Arona",
+    "price": 250,
+    "imgLink": "/static/img/webapps/arenda_avto/seat_arona.png"
+  },
+  {
+    "name": "Toyota RAV4",
+    "price": 1000,
+    "imgLink": "/static/img/webapps/arenda_avto/toypta_rav4.png"
+  },
+    {
+    "name": "Volkswagen T-Cross",
+    "price": 1000,
+    "imgLink": "/static/img/webapps/arenda_avto/vw_t_cross.png"
+  }
+]
