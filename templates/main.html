@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -135,7 +135,6 @@
     </div>
     {%endif%}
     {%if step==2%}
-    {%if type_kitchen=='uglovaya_levaya'%}
 
     <div class="row">
         <ul class="progress">
@@ -160,7 +159,20 @@
         <h2>Выберите технику для кухни</h2>
         <img src="/static/img/calc/shag2/tecnik-first.webp">
     </div>
-    {%endif%}
+
+    <div class="row"></div>
+    <h4>Посудомойка</h4>
+    <div class="row">
+    <img src="/static/img/calc/shag2/posudomoika.webp" alt="" style="width: 30%">
+        </div>
+    <form method="post">
+        <div class="row">
+    <span>Да<input type="radio" name="posudomoika" value="da" onclick="submit()"></span>
+    </div>
+        <div class="row">
+    <span>Нет<input type="radio" name="posudomoika" value="net" onclick="submit()"></span>
+</div>
+    </form>
     <div class="row back">
     <button id='back' onclick="window.history.go(-1); return false;">Назад</button>
     </div>
