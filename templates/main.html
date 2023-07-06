@@ -134,49 +134,254 @@
         </table>
     </div>
     {%endif%}
-    {%if step==2%}
 
-    <div class="row">
-        <ul class="progress">
-
-            <li class="active" data-count="1"><span>Техника</span></li>
-            <li data-count="2"><span>Планировка</span></li>
-            <li data-count="3"><span>Вид шкафов</span></li>
-            <li data-count="4"><span>Столешница</span></li>
-            <li data-count="5"><span>Фартук</span></li>
-
-            <li data-count="6"><span>Дизайн</span></li>
-
-            <li data-count="7"><span>Наполнение</span></li>
-
-            <li data-count="8"><span>Этап</span></li>
+    <div class="row col-12 mx-auto">
 
 
-            <li data-count="9"><span>Размер</span></li>
-        </ul>
-    </div>
-    <div class="row">
-        <h2>Выберите технику для кухни</h2>
-        <img src="/static/img/calc/shag2/tecnik-first.webp">
-    </div>
+        <h2>{{header_text}}</h2>
 
-    <div class="row"></div>
-    <h4>Посудомойка</h4>
-    <div class="row">
-    <img src="/static/img/calc/shag2/posudomoika.webp" alt="" style="width: 30%">
+        <div class="pict mx-auto">
+            <!-- шаг1 начало-->
+            {%if step==2%}
+            <div>
+                {%if posudomoika==1%}
+                <img src="/static/img/calc/shag2/posud/posud-da.webp" alt="">
+                {%elif posudomoika==0%}
+                <img src="/static/img/calc/shag2/posud/posud-net.webp" alt="">
+                {%else%}
+                <img src="/static/img/calc/shag2/tecnik-first.webp" alt="">
+                {%endif%}
+            </div>
+            {%endif%}
+            <!-- шаг1 конец-->
+            <!-- шаг2.1 начало-->
+            {%if step>0%}
+            <div>
+                <img src="/static/img/calc/{{pict}}" alt="">
+            </div>
+            {%endif%}
+
         </div>
-    <form method="post">
+        <h4 class="mx-auto">{{oborud}}</h4>
+        <div class="row"></div>
+
+        {%if step in [2,2.1,2.2,2.3,2.4]%}
+        <form method="post">
+
+            <div class="row question mx-auto">
+                {%if step==2%}
+                <div class="col-5"><img src="/static/img/calc/shag2/posud/posudomoika.webp" alt="" class="posud">
+                </div>
+                {%endif%}
+
+                {%if step==2.1%}
+                <div class="col-5"><img src="/static/img/calc/shag2/duhovka/duhovka.webp" alt="" class="posud"></div>
+                {%endif%}
+                {%if step==2.2%}
+                <div class="col-5"><img src="/static/img/calc/shag2/vitag/vitag.webp" alt="" class="posud"></div>
+                {%endif%}
+                {%if step==2.3%}
+                <div class="col-5"><img src="/static/img/calc/shag2/micro/micro.webp" alt="" class="posud"></div>
+                {%endif%}
+                {%if step==2.4%}
+                <div class="col-5"><img src="/static/img/calc/shag2/holod/holod.webp" alt="" class="posud w-25" ></div>
+                {%endif%}
+
+                <div class="col-5">
+                    {%if step==2%}
+                    {%if posudomoika==1%}
+                    <span>Да<input type="radio" name="posudomoika" value="da" onclick="submit()"
+                                   checked>  </span>
+                    <br>
+                    <span>Нет<input type="radio" name="posudomoika" value="net" onclick="submit()"></span>
+                    {%elif posudomoika==0%}
+                    <span>Да<input type="radio" name="posudomoika" value="da" onclick="submit()">  </span>
+                    <br>
+                    <span>Нет<input type="radio" name="posudomoika" value="net" onclick="submit()"
+                                    checked></span>
+                    {%else%}
+                    <span>Да<input type="radio" name="posudomoika" value="da" onclick="submit()">  </span>
+                    <br>
+                    <span>Нет<input type="radio" name="posudomoika" value="net" onclick="submit()"></span>
+                    {%endif%}
+                    {%endif%}
+                    {%if step==2.1%}
+                    <div>
+                        {%if duhovka=='penal'%}
+                        <span>В пенале<input type="radio" name="duhovka" value="penal" onclick="submit()"
+                                             checked></span>
+                        <br>
+                        <span>В низу<input type="radio" name="duhovka" value="vstr" onclick="submit()"></span>
+                        <br>
+                        <span>Отдельная<input type="radio" name="duhovka" value="otd" onclick="submit()"></span>
+
+                        {%elif duhovka=='vstr'%}
+                        <span>В пенале<input type="radio" name="duhovka" value="penal" onclick="submit()"></span>
+                        <br>
+                        <span>В низу<input type="radio" name="duhovka" value="vstr" onclick="submit()"
+                                           checked></span>
+                        <br>
+                        <span>Отдельная<input type="radio" name="duhovka" value="otd" onclick="submit()"></span>
+                        {%elif duhovka=='otd'%}
+                        <span>В пенале<input type="radio" name="duhovka" value="penal" onclick="submit()"></span>
+                        <br>
+                        <span>В низу<input type="radio" name="duhovka" value="vstr" onclick="submit()"></span>
+                        <br>
+                        <span>Отдельная<input type="radio" name="duhovka" value="otd" onclick="submit()"
+                                              checked></span>
+                        {%else%}
+                        <span>В пенале<input type="radio" name="duhovka" value="penal" onclick="submit()"></span>
+                        <br>
+                        <span>В низу<input type="radio" name="duhovka" value="vstr" onclick="submit()"></span>
+                        <br>
+                        <span>Отдельная<input type="radio" name="duhovka" value="otd" onclick="submit()"></span>
+                        {%endif%}
+                    </div>
+                    {%endif%}
+                    {%if step==2.2%}
+                    <div>
+
+                        {%if vitag=='vstr'%}
+                        <span>Встроенная<input type="radio" name="vitag" value="vstr" onclick="submit()"
+                                               checked>  </span>
+                        <br>
+                        <span>Отдельная<input type="radio" name="vitag" value="otd" onclick="submit()"></span>
+                        {%elif vitag=='otd'%}
+                        <span>Встроенная<input type="radio" name="vitag" value="vstr" onclick="submit()"
+                        >  </span>
+                        <br>
+                        <span>Отдельная<input type="radio" name="vitag" value="otd" onclick="submit()" checked></span>
+                        {%else%}
+                        <span>Встроенная<input type="radio" name="vitag" value="vstr" onclick="submit()">  </span>
+                        <br>
+                        <span>Отдельная<input type="radio" name="vitag" value="otd" onclick="submit()"></span>
+
+                        {%endif%}
+                    </div>
+                    {%endif%}
+                    {%if step==2.3%}
+                    <div>
+
+                        {%if micro=='vstr'%}
+                        <span>Встроенная<input type="radio" name="micro" value="vstr" onclick="submit()"
+                                               checked>  </span>
+                        <br>
+                        <span>Отдельная<input type="radio" name="micro" value="otd" onclick="submit()"></span>
+                        <span>Нет<input type="radio" name="micro" value="net" onclick="submit()"></span>
+                        {%elif micro=='otd'%}
+                        <span>Встроенная<input type="radio" name="micro" value="vstr" onclick="submit()"
+                        >  </span>
+                        <br>
+                        <span>Отдельная<input type="radio" name="micro" value="otd" onclick="submit()" checked></span>
+                        <span>Нет<input type="radio" name="micro" value="net" onclick="submit()"></span>
+                        {%elif micro=='net'%}
+                        <span>Встроенная<input type="radio" name="micro" value="vstr" onclick="submit()"
+                        >  </span>
+                        <br>
+                        <span>Отдельная<input type="radio" name="micro" value="otd" onclick="submit()"></span>
+                        <span>Нет<input type="radio" name="micro" value="net" onclick="submit()" checked></span>
+
+                        {%else%}
+                        <span>Встроенная<input type="radio" name="micro" value="vstr" onclick="submit()">  </span>
+                        <br>
+                        <span>Отдельная<input type="radio" name="micro" value="otd" onclick="submit()"></span>
+                        <span>Нет<input type="radio" name="micro" value="net" onclick="submit()"></span>
+
+                        {%endif%}
+                    </div>
+                    {%endif%}
+                    {%if step==2.4%}
+                    <div>
+
+                        {%if holod=='vstr'%}
+                        <span>Встроенный<input type="radio" name="holod" value="vstr" onclick="submit()"
+                                               checked>  </span>
+                        <br>
+                        <span>Широкий<input type="radio" name="holod" value="shir" onclick="submit()"></span>
+                        <span>Отдельный<input type="radio" name="holod" value="otd" onclick="submit()"></span>
+                        {%elif holod=='otd'%}
+                        <span>Встроенный<input type="radio" name="holod" value="vstr" onclick="submit()"
+                        >  </span>
+                        <br>
+                        <span>Широкий<input type="radio" name="holod" value="shir" onclick="submit()" ></span>
+                        <span>Отдельный<input type="radio" name="holod" value="otd" onclick="submit() checked"></span>
+                        {%elif holod=='shir'%}
+                        <span>Встроенный<input type="radio" name="holod" value="vstr" onclick="submit()"
+                        >  </span>
+                        <br>
+                        <span>Широкий<input type="radio" name="holod" value="shir" onclick="submit()" checked></span>
+                        <span>Отдельный<input type="radio" name="holod" value="otd" onclick="submit()"></span>
+
+
+                        {%else%}
+                        <span>Встроенный<input type="radio" name="holod" value="vstr" onclick="submit()">  </span>
+                        <br>
+                        <span>Широкий<input type="radio" name="holod" value="shir" onclick="submit()"></span>
+                        <span>Отдельный<input type="radio" name="holod" value="otd" onclick="submit()"></span>
+
+
+                        {%endif%}
+                    </div>
+                    {%endif%}
+
+                </div>
+            </div>
+        </form>
+        {%endif%}
+        {%if step>=3%}
+        <form method="post">
+        <div class="row sub_pict">
+            <div class="col-6"><input type="radio" name="verh_sk"><img src="{{sub_pict['pict1_1']}}" alt=""></div>
+            <div class="col-6"><img src="{{sub_pict['pict2_1']}}" alt=""></div>
+        </div>
+        <div class="row sub_pict">
+            <div class="col-6"><img src="{{sub_pict['pict2_1']}}" alt=""></div>
+            <div class="col-6"><img src="{{sub_pict['pict2_2']}}" alt=""></div>
+        </div>
+            {%if type_kitchen=='p_obraznaya'%}
+            <div class="row sub_pict">
+            <div class="col-6"><img src="{{sub_pict['pict3_1']}}" alt=""></div>
+            <div class="col-6"><img src="{{sub_pict['pict3_2']}}" alt=""></div>
+        </div>
+        <div class="row sub_pict">
+            <div class="col-6"><img src="{{sub_pict['pict4_1']}}" alt=""></div>
+
+        </div>
+            {%endif%}
+            </form>
+        {%endif%}
         <div class="row">
-    <span>Да<input type="radio" name="posudomoika" value="da" onclick="submit()"></span>
+            {{step}}
+            <form method="post">
+
+                {%if step==2.0%}
+                <input type="hidden" name="posud" value="{{posudomoika}}">
+                {%elif step==2.1%}
+                <input type="hidden" name="duhovka" value="{{duhovka}}">
+                {%elif step==2.2%}
+                <input type="hidden" name="vitag" value="{{vitag}}">
+                {%elif step==2.3%}
+                <input type="hidden" name="micro" value="{{micro}}">
+                {%elif step==2.4%}
+                <input type="hidden" name="holod" value="{{holod}}">
+                {%else%}
+                oops
+                {%endif%}
+                {%if step in [2.0,2.1,2.2,2.3,2.4]%}
+                <input type="hidden" name="duhovka" value="{{duhovka}}">
+                <input type="hidden" name="vitag" value="{{vitag}}">
+                <input type="hidden" name="micro" value="{{micro}}">
+                <input type="hidden" name="holod" value="{{holod}}">
+                <button class='back' type="submit" name="save" value="{{step}}">Далее</button>
+                <button class='back' type="submit" name="back" value="{{step}}">Назад</button>
+                {%endif%}
+
+            </form>
+        </div>
+
     </div>
-        <div class="row">
-    <span>Нет<input type="radio" name="posudomoika" value="net" onclick="submit()"></span>
 </div>
-    </form>
-    <div class="row back">
-    <button id='back' onclick="window.history.go(-1); return false;">Назад</button>
-    </div>
-    {%endif%}
-</div>
+
+
 </body>
 </html>

@@ -48,10 +48,10 @@ body, html {
 .back{
     text-align: center;
 }
-#back{
-    margin-top: 20vh;
+.back{
+    margin-top: 1vh;
     width: 60%;
-    height: 10vh;
+    height: 5vh;
     margin-left: 20%;
     border: 0.5px solid burlywood;
     border-radius: 6px;
@@ -67,4 +67,25 @@ body, html {
 .progress li{
     color: red;
     width: 20vh;
+}
+.posud{
+    width: 70%;
+}
+.question{
+    margin-top: 10px;
+    border: 1px solid burlywood;
+    border-radius: 6px;
+    width: 98%;
+    height: 20vh;
+}
+.radio{
+    padding: 20px !important;
+}
+.pict {
+    width: 98%;
+    border: 1px solid burlywood;
+    border-radius: 6px;
+}
+.pict img{
+    width: 100%;
 }
